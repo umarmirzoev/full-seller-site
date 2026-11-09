@@ -1,0 +1,1 @@
+{ "rewrites": [ { "source": "/partner", "destination": "/index.html" }, { "source": "/partner.html", "destination": "/index.html" } ] }
