@@ -4165,6 +4165,15 @@ try { setCurrency(State.currency, false); } catch (e) {}
 
 initGeoIP();
 
+/* Прямые ссылки на страницы: /partner, /partner.html или #partner открывают кабинет производителя */
+(function openPageFromUrl() {
+  var path = location.pathname.replace(/\/+$/, '').toLowerCase();
+  var hash = (location.hash || '').replace('#', '').toLowerCase();
+  if (path === '/partner' || path === '/partner.html' || hash === 'partner') {
+    var open = function () { try { showPage('partner'); } catch (e) {} };
+    if (document.readyState === 'complete') open(); else window.addEventListener('load', open);
+  }
+})();
 </script>
 </body>
 </html>
